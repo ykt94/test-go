@@ -6,16 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
- * Class Category
+ * Class Post
  * @package App\Models
  *
  * @author Alexander Tolstoukhov
  */
-class Category extends Model
+class Post extends Model
 {
-    public function posts(): BelongsToMany
+    public function categories(): BelongsToMany
     {
-        return $this->belongsToMany(Post::class);
+        return $this->belongsToMany(Category::class);
     }
-
 }
